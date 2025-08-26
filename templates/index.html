@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#our-story">Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#try">Try</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Meet the Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="our-story" class="hero-section">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="display-4 fw-bold">Customer Segmentation</h1>
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h4>Discover Your Segment</h4>
+                                <p>Find out which customer segment you belong to based on your demographics and spending habits.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                </div>
+                                <h4>Understand Your Fit</h4>
+                                <p>Learn how your characteristics align with different customer segments and what that means for businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body text-center">
+                                <div class="feature-icon mb-3">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4>Visualize Your Data</h4>
+                                <p>See how you compare to other customers through interactive visualizations and cluster analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Our Story Section -->
+<section id="our-story-section" class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left Side: Our Story -->
+      <div class="col-md-3 d-flex justify-content-end">
+        <h2 class="our-story-title">
+          Our <span>Story</span>
+        </h2>
+      </div>
+
+      <!-- Vertical Divider -->
+      <div class="col-md-1 d-flex justify-content-center">
+        <div class="vertical-line"></div>
+      </div>
+
+      <!-- Right Side: Content -->
+      <div class="col-md-8">
+        <h3 class="fw-bold">Customer Segmentation</h3>
+        <p>
+          Customer Segmentation is more than just a tool; it's a gateway to understanding your place in the market. Our platform empowers users to input their Age, Annual Income, and Spending Score, allowing for an accurate prediction of their customer segment.
+        </p>
+        <p>
+          With a focus on delivering clear insights, we aim to help you comprehend your spending habits and identify where you stand among your peers. Whether you're a business professional or a curious consumer, join us in exploring the diverse landscape of customer profiles.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Try Section -->
+    <section id="try" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="mb-0">Predict Customer Segment</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-center">Based on age, income, and spending score to predict customer group</p>
+                            
+                            <form id="segmentation-form">
+                                <div class="row mb-4">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Age</span>
+                                            <input type="number" class="form-control" id="age" name="age" min="18" max="80" value="30">
+                                        </div>
+                                        <input type="range" class="form-range mt-2" id="age-slider" min="18" max="80" value="30">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Income</span>
+                                            <input type="number" class="form-control" id="income" name="income" min="10" max="150" value="50">
+                                        </div>
+                                        <input type="range" class="form-range mt-2" id="income-slider" min="10" max="150" value="50">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Spending</span>
+                                            <input type="number" class="form-control" id="spending" name="spending" min="1" max="100" value="50">
+                                        </div>
+                                        <input type="range" class="form-range mt-2" id="spending-slider" min="1" max="100" value="50">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">Predict Cluster</button>
+                                </div>
+                            </form>
+
+                            <div id="results" class="mt-4" style="display: none;">
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">Segmentation Complete!</h4>
+                                    <p><strong>Predicted Cluster:</strong> <span id="cluster-number"></span></p>
+                                    <p><strong>You belong to:</strong> <span id="cluster-name"></span></p>
+                                    <p id="cluster-description"></p>
+                                </div>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Customer Information</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <p><strong>Age:</strong> <span id="result-age"></span></p>
+                                                <p><strong>Annual Income:</strong> $<span id="result-income"></span>,000</p>
+                                                <p><strong>Spending Score:</strong> <span id="result-spending"></span>/100</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Cluster Centers (original scale)</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Cluster</th>
+                                                                <th>Age</th>
+                                                                <th>Income</th>
+                                                                <th>Spending</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="cluster-centers-table">
+                                                            <!-- Table will be populated by JavaScript -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 text-center">
+                                    <h5>Scatterplot Visualization</h5>
+                                    <div class="plot-container">
+                                        <img id="scatterplot" class="img-fluid" alt="Customer Segmentation Plot">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5">Our features</h2>
+                <p class="lead">Innovative tools to enhance your customer insights</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card-dark">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h4>Input Form</h4>
+                                    <p>Submit your details to get personalized prediction of your customer segment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card-dark">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h4>Result Display</h4>
+                                    <p>View your predicted segment with detailed explanation and characteristics.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card-dark">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h4>Cluster Centers Table</h4>
+                                    <p>Explore the average features of different customer segments in our model.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card-dark">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h4>Scatterplot Visualization</h4>
+                                    <p>Visual representation of customer segments with your position highlighted.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn back-to-top">Back to top</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section id="team" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5">Meet the Team</h2>
+                <p class="lead">The talented individuals behind our customer segmentation solution</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Piyush Anand -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 team-card">
+                        <div class="card-body text-center">
+                            <div class="team-avatar mb-4">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <h3 class="mb-3">Piyush Anand</h3>
+                            <p class="mb-4">Data Scientist & Machine Learning Engineer with expertise in customer analytics and segmentation models.</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="mailto:piyush200anand@gmail.com" class="btn btn-primary">
+                                    <i class="fas fa-envelope me-2"></i>Email
+                                </a>
+                                <a href="https://www.linkedin.com/in/piyush-anand-851a5028a" target="_blank" class="btn btn-info">
+                                    <i class="fab fa-linkedin me-2"></i>LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Samridhi -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 team-card">
+                        <div class="card-body text-center">
+                            <div class="team-avatar mb-4">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <h3 class="mb-3">Samridhi</h3>
+                            <p class="mb-4">Full Stack Developer & UI/UX Designer specializing in creating intuitive data visualization interfaces.</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="mailto:samridhi10043@gmail.com" class="btn btn-primary">
+                                    <i class="fas fa-envelope me-2"></i>Email
+                                </a>
+                                <a href="https://www.linkedin.com/in/samridhi-06a23b28b" target="_blank" class="btn btn-info">
+                                    <i class="fab fa-linkedin me-2"></i>LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Customer Segmentation</h5>
+                    <h5>Where patterns become profits</h5>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 Customer Segmentation.All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
